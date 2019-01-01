@@ -14,7 +14,7 @@
 importScripts("workbox-v3.6.3/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "workbox-v3.6.3"});
 
-workbox.core.setCacheNameDetails({prefix: "gatsby-plugin-offline"});
+workbox.core.setCacheNameDetails({prefix: "gatsby-plugin-offline-2"});
 
 workbox.skipWaiting();
 workbox.clientsClaim();
@@ -26,17 +26,17 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-212a475944a272f38ea9.js"
+    "url": "webpack-runtime-4d5446cc4118eaf9af32.js"
   },
   {
-    "url": "app-9d56bd9035a2339a9335.js"
+    "url": "app-3b580265d0d9e0c4ef9c.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-a95f5dabcc5506d8c3ad.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "7292465f88e8567b5de0fff97a86a3cf"
+    "revision": "d2422205cc9916a3445fc5587925c234"
   },
   {
     "url": "component---src-pages-404-js.7be96d4600afe51d9a94.css"
@@ -61,9 +61,7 @@ self.__precacheManifest = [
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, workbox.strategies.cacheFirst(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, workbox.strategies.staleWhileRevalidate(), 'GET');
-workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, workbox.strategies.staleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, workbox.strategies.networkFirst(), 'GET');
 
 /* global importScripts, workbox, idbKeyval */
 
